@@ -20,7 +20,7 @@ function makePayment() {
             description: "Pay now to get the study questions of all 12 chapters sent to your inbox.",
         },
         callback: function (payment) {
-            open(`https://store.tencis.online/storecookie/${emailValue}/${payment.transaction_id}/`, '_parent')
+            open(`https://jambapp-szn6.onrender.com/storecookie/${emailValue}/${payment.transaction_id}/`, '_parent')
         },
     });
 }
