@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 Study Questions & Answers - Mune</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chapter.css' %}">
+</head>
+
+<body>
+    <div class="card title">
+        <h1>Chapter 1 Study Questions & Answers</h1>
+        <a href="/">Back to Home</a>
+    </div>
+    {% for quiz in quizzes %}
+    <div class="card">
+        <h1 id="no">Question {{ quiz.id }}</h1>
+        <p id="question">{{ quiz.question }}</p>
+
+        {% if quiz.ans == 'o1' %}
+        <p class="option" id="o1" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o1 }}</p>
+        {% else %}
+        <p class="option" id="o1">{{ quiz.o1 }}</p>
+        {% endif %}
+
+        {% if quiz.ans == 'o2' %}
+        <p class="option" id="o2" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o2 }}</p>
+        {% else %}
+        <p class="option" id="o2">{{ quiz.o2 }}</p>
+        {% endif %}
+
+        {% if quiz.ans == 'o3' %}
+        <p class="option" id="o3" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o3 }}</p>
+        {% else %}
+        <p class="option" id="o3">{{ quiz.o3 }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>
