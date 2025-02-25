@@ -32,7 +32,7 @@ django_email_host_password = os.getenv('EMAIL_HOST_PASSWORD')
 SECRET_KEY = str(django_secret_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['jambapp-szn6.onrender.com', '127.0.0.1']
 
