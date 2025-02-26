@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('jambapp/.env')
 secret_key = os.getenv('SECRET_KEY')
 
 def home(request):
