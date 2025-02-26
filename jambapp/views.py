@@ -138,11 +138,11 @@ def store_cookie(request, email, transaction_id):
 def activate_order(request):
     transaction_id = request.session.__getitem__('transaction_id')
     email = request.session.__getitem__('client_email')
-    transaction_id = str(transaction_id)
+    transaction_id = int(transaction_id)
     email = str(email)
-    print(transaction_id)
     request.session.__delitem__('transaction_id')
     request.session.__delitem__('client_email')
+    print(transaction_id, email)
     if not transaction_id:
         return HttpResponse('Transaction ID missing!')
     transaction_data = check_transaction_status(request, transaction_id)

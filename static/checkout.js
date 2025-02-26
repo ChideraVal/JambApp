@@ -9,7 +9,7 @@ function makePayment() {
     FlutterwaveCheckout({
         public_key: "FLWPUBK-4665a5bfdd9fe8535fa8c74f0d845b09-X",
         tx_ref: `cs-${emailValue}`,
-        amount: 1500,
+        amount: 5,
         currency: "NGN",
         payment_options: "card, ussd, banktransfer, account, internetbanking, nqr, applepay, googlepay, enaira, opay",
         customer: {
