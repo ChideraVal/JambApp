@@ -59,7 +59,9 @@ def chapter2(request):
 def check_transaction_status(request, transaction_id):
     url = f"https://api.flutterwave.com/v3/transactions/{transaction_id}/verify"
     headers = {
-        "Authorization": f"Bearer {secret_key}"
+        "accept": "application/json",
+        "Authorization": f"Bearer {secret_key}",
+        "Content-Type": "application/json"
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
