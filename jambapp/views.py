@@ -148,6 +148,7 @@ def activate_order(request):
     if not transaction_id:
         return HttpResponse('Transaction ID missing!')
     transaction_data = check_transaction_status(request, transaction_id)
+    print('TRANSACTION DATA: ', transaction_data)
     if transaction_data:
         if str(transaction_data['status']).lower() == 'success' and str(transaction_data['data']['status']).lower() == 'successful':
             email_value = send_study_questions(request, email)
