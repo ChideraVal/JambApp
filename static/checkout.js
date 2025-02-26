@@ -7,7 +7,7 @@ let email = document.getElementById('email');
 function makePayment() {
     let emailValue = document.getElementById('email').value;
     FlutterwaveCheckout({
-        public_key: "FLWPUBK-83a1598aeaae6c10190078ec03e480e2-X",
+        public_key: "FLWPUBK-ce7a04f88ea6d3b3fcf53315dd872168-X",
         tx_ref: `cs-${emailValue}`,
         amount: 5,
         currency: "NGN",
