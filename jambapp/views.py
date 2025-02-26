@@ -66,7 +66,7 @@ def check_transaction_status(request, transaction_id):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json()
-    return None
+    return response
 
 def send_study_questions(request, email):
     quizzes = [
