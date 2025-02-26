@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 import requests
 from dotenv import load_dotenv
 
-load_dotenv('jambapp/.env')
+load_dotenv()
 secret_key = os.getenv('SECRET_KEY')
 
 def home(request):
@@ -60,15 +60,13 @@ def check_transaction_status(request, transaction_id):
     print(secret_key)
     url = f"https://api.flutterwave.com/v3/transactions/{transaction_id}/verify"
     headers = {
-        "accept": "application/json",
         "Authorization": f"Bearer {secret_key}",
-        "Content-Type": "application/json"
     }
     response = requests.get(url, headers=headers)
     print(response.text)
     if response.status_code == 200:
         return response.json()
-    return response
+    return None
 
 def send_study_questions(request, email):
     quizzes = [
@@ -144,8 +142,8 @@ def activate_order(request):
     email = request.session.__getitem__('client_email')
     transaction_id = int(transaction_id)
     email = str(email)
-    request.session.__delitem__('transaction_id')
-    request.session.__delitem__('client_email')
+    # request.session.__delitem__('transaction_id')
+    # request.session.__delitem__('client_email')
     print(transaction_id, email)
     if not transaction_id:
         return HttpResponse('Transaction ID missing!')
