@@ -57,6 +57,7 @@ def chapter2(request):
 
 
 def check_transaction_status(request, transaction_id):
+    print(secret_key)
     url = f"https://api.flutterwave.com/v3/transactions/{transaction_id}/verify"
     headers = {
         "accept": "application/json",
@@ -150,7 +151,7 @@ def activate_order(request):
         return HttpResponse('Transaction ID missing!')
     transaction_data = check_transaction_status(request, transaction_id)
     print('TRANSACTION DATA: ', transaction_data)
-    
+
     if transaction_data:
         if str(transaction_data['status']).lower() == 'success' and str(transaction_data['data']['status']).lower() == 'successful':
             email_value = send_study_questions(request, email)
