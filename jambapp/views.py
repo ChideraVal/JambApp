@@ -64,6 +64,7 @@ def check_transaction_status(request, transaction_id):
         "Content-Type": "application/json"
     }
     response = requests.get(url, headers=headers)
+    print(response.text)
     if response.status_code == 200:
         return response.json()
     return response
