@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payment Failed - Mune</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
+
 <body>
-    <h1>Failed!, {{ email }}</h1>
+    <div class="success">
+        <div class="successinfo">
+            <img src="{% static 'x-button.png' %}" alt="" width="100" height="100">
+            <h2>Payment Failed</h2>
+            <p>
+                Your payment of ₦1,500 was unsuccessful and
+                has been declined. Please visit the <a href="/" style="color: #444;">home</a> page to restart the payment process. We
+                also recommend using a different payment method.
+            </p>
+            <a href="/" class="btn">Back To Home</a>
+        </div>
+    </div>
 </body>
 </html>

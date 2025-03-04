@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Processing Payment - Mune</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
+
 <body>
-    <h1>Pending..., {{ email }}</h1>
+    <div class="success">
+        <div class="successinfo">
+            <img src="{% static 'pending.png' %}" alt="" width="100" height="100">
+            <h2>Processing your payment...</h2>
+            <p>
+                Your payment of ₦1,500 is pending and
+                is being processed. Please <a href="" style="color: #444;">refresh</a> the page to re-check the current payment status.
+            </p>
+            <a href="/" class="btn">Back To Home</a>
+        </div>
+    </div>
 </body>
 </html>

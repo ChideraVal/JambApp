@@ -56,15 +56,12 @@ def chapter2(request):
     ]
     return render(request, 'chapter2.html', {'quizzes': quizzes})
 
-
 def check_transaction_status(request, transaction_id):
-    print(secret_key)
     url = f"https://api.flutterwave.com/v3/transactions/{transaction_id}/verify"
     headers = {
         "Authorization": f"Bearer {secret_key}",
     }
     response = requests.get(url, headers=headers)
-    print(response.text)
     if response.status_code == 200:
         return response.json()
     return None
@@ -132,7 +129,6 @@ def send_study_questions(request, email):
     payment_success_mail.send(fail_silently=False)
     return None
 
-
 def store_cookie(request, email, transaction_id):
     request.session.__setitem__('transaction_id', str(transaction_id))
     request.session.__setitem__('client_email', str(email))
@@ -143,13 +139,11 @@ def activate_order(request):
     email = request.session.__getitem__('client_email')
     transaction_id = int(transaction_id)
     email = str(email)
-    # request.session.__delitem__('transaction_id')
-    # request.session.__delitem__('client_email')
-    print(transaction_id, email)
+    request.session.__delitem__('transaction_id')
+    request.session.__delitem__('client_email')
     if not transaction_id:
         return HttpResponse('Transaction ID missing!')
     transaction_data = check_transaction_status(request, transaction_id)
-    print('TRANSACTION DATA: ', transaction_data)
 
     if transaction_data:
         if str(transaction_data['status']).lower() == 'success' and str(transaction_data['data']['status']).lower() == 'successful':

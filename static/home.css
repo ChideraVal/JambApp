@@ -112,7 +112,7 @@ input[type=submit] {
     /* margin: .5em 0; */
 }
 
-.cpt a {
+.cpt a, .successinfo a.btn {
     background-color: blueviolet;
     color: white;
     padding: .5em;
@@ -168,8 +168,43 @@ p.qno {
     background-color: orangered;
 }
 
+.success {
+    padding: 3em;
+    box-sizing: border-box;
+    background-color: white;
+    width: 35%;
+    margin: 2em auto;
+    border-radius: 1em;
+}
+
+.successinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8em;
+    text-align: center;
+}
+
+.successinfo h2 {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.successinfo p {
+    letter-spacing: .03em;
+    line-height: 1.6em;
+    color: #444;
+}
+
+.successinfo a.btn {
+    padding: .7em;
+}
+
 @media (max-width: 1100px) {
-    .card {
+    .card, .success {
         width: 60%;
     }
 
@@ -179,7 +214,11 @@ p.qno {
 }
 
 @media (max-width: 700px) {
-    .card {
+    body {
+        background-color: rgb(227, 216, 238);
+    }
+    
+    .card, .success {
         width: 100%;
         margin: 0;
         border-radius: 0;
