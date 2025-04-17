@@ -19,7 +19,6 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env_path = os.path.join(BASE_DIR, 'jambapp/.env')
-# env_path = BASE_DIR / 'jambapp' / '.env'
 load_dotenv(env_path)
 
 django_secret_key = os.getenv('DJANGO_SECRET_KEY')
@@ -142,8 +141,8 @@ DEFAULT_FROM_EMAIL = f'Mune <{str(django_email_host_user)}>'
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #  CSRF cookie settings

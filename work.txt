@@ -1,0 +1,5 @@
+fix redirect urls
+fix email view
+fix settings
+set domain name
+fix questions view and page

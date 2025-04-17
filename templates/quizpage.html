@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
-    <!-- <link rel="stylesheet" href="{% static 'quizpage.css' %}"> -->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -74,29 +73,25 @@
         <h1 id="no">Question {{ quiz.id }}</h1>
         <p id="question">{{ quiz.question }}</p>
 
-        {% if quiz.ans == 'o1' %}
+        {% if quiz.answer == 'o1' %}
         <p class="option" id="o1" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o1 }}</p>
         {% else %}
         <p class="option" id="o1">{{ quiz.o1 }}</p>
         {% endif %}
 
-        {% if quiz.ans == 'o2' %}
+        {% if quiz.answer == 'o2' %}
         <p class="option" id="o2" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o2 }}</p>
         {% else %}
         <p class="option" id="o2">{{ quiz.o2 }}</p>
         {% endif %}
 
-        {% if quiz.ans == 'o3' %}
+        {% if quiz.answer == 'o3' %}
         <p class="option" id="o3" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o3 }}</p>
         {% else %}
         <p class="option" id="o3">{{ quiz.o3 }}</p>
         {% endif %}
-        <!-- <button id="next">Next</button>
-            <button id="prev">Previous</button> -->
     </div>
     {% endfor %}
-
-
 </body>
 
 </html>

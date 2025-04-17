@@ -9,7 +9,7 @@ function makePayment() {
     FlutterwaveCheckout({
         public_key: "FLWPUBK-ce7a04f88ea6d3b3fcf53315dd872168-X",
         tx_ref: `cs-${emailValue}`,
-        amount: 5,
+        amount: 2000,
         currency: "NGN",
         payment_options: "card, ussd, banktransfer, account, internetbanking, nqr, applepay, googlepay, enaira, opay",
         customer: {
@@ -27,7 +27,8 @@ function makePayment() {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    makePayment();
+    // makePayment();
+    open(`https://jambapp-szn6.onrender.com/sendemail/${emailValue}/`, '_parent')
 })
 
 

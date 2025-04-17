@@ -9,4 +9,5 @@ urlpatterns = [
     path('chapter2/', views.chapter2),
     path('storecookie/<str:email>/<int:transaction_id>/', views.store_cookie),
     path('verify/', views.activate_order),
+    path('sendemail/<str:email>/', views.send_study_questions)
 ]
