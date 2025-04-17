@@ -28,7 +28,7 @@ function makePayment() {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // makePayment();
-    open(`https://jambapp-szn6.onrender.com/sendemail/${emailValue}/`, '_parent')
+    open(`https://jambapp-szn6.onrender.com/sendemail/${email.value}/`, '_parent')
 })
 
 
