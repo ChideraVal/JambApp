@@ -67,31 +67,38 @@
 </head>
 
 <body>
-
     {% for quiz in quizzes %}
     <div class="card">
         <h1 id="no">Question {{ quiz.id }}</h1>
         <p id="question">{{ quiz.question }}</p>
 
-        {% if quiz.answer == 'o1' %}
-        <p class="option" id="o1" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o1 }}</p>
+        {% if quiz.answer == 'a' %}
+        <p class="option" id="o1" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.option1 }}</p>
         {% else %}
-        <p class="option" id="o1">{{ quiz.o1 }}</p>
+        <p class="option" id="o1">{{ quiz.option1 }}</p>
         {% endif %}
 
-        {% if quiz.answer == 'o2' %}
-        <p class="option" id="o2" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o2 }}</p>
+        {% if quiz.answer == 'b' %}
+        <p class="option" id="o2" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.option2 }}</p>
         {% else %}
-        <p class="option" id="o2">{{ quiz.o2 }}</p>
+        <p class="option" id="o2">{{ quiz.option2 }}</p>
         {% endif %}
 
-        {% if quiz.answer == 'o3' %}
-        <p class="option" id="o3" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.o3 }}</p>
+        {% if quiz.answer == 'c' %}
+        <p class="option" id="o3" style="border: 1px solid rgb(33, 187, 33); outline: 3px solid rgb(146, 233, 146);">{{ quiz.option3 }}</p>
         {% else %}
-        <p class="option" id="o3">{{ quiz.o3 }}</p>
+        <p class="option" id="o3">{{ quiz.option3 }}</p>
         {% endif %}
+
+        <div class="exp">
+            <h3>Explanation</h3>
+            <p>
+                {{ quiz.explanation }}
+            </p>
+        </div>
     </div>
     {% endfor %}
+    
 </body>
 
 </html>
