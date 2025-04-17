@@ -35,7 +35,7 @@ def check_transaction_status(request, transaction_id):
 
 def send_study_questions(request, email):
 
-    quiz_emails =[
+    quiz_emails = [
     {
         'title': 'The Lekki Headmaster Study Questions Chapter 3 (Migration Tales).',
         'questions': questions.questions_data_3
@@ -75,8 +75,7 @@ def send_study_questions(request, email):
     {
         'title': 'The Lekki Headmaster Study Questions Chapter 12 (...Dawn).',
         'questions': questions.questions_data_12
-    },
-    
+    }
     ]
     
     connection = get_connection()
