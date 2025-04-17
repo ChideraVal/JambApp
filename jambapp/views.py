@@ -81,16 +81,16 @@ def send_study_questions(request, email):
     connection = get_connection()
     connection.open()
 
-    for email in quiz_emails:
+    for q_email in quiz_emails:
         quiz_email_to_send = EmailMultiAlternatives(
-                        str(email['title']),
+                        str(q_email['title']),
                         '',
                         str(settings.DEFAULT_FROM_EMAIL),
                         [str(email)],
                         reply_to=['munenoreply@mail.com'],
                         connection=connection
                     )
-        html_page = render_to_string('quizpage.html', {'quizzes': email['questions']})
+        html_page = render_to_string('quizpage.html', {'quizzes': q_email['questions']})
         quiz_email_to_send.attach_alternative(html_page, 'text/html')
         quiz_email_to_send.send(fail_silently=False)
 
